@@ -184,6 +184,9 @@ class MoodlePasswordPrimaryAuthenticationProvider extends AbstractPrimaryAuthent
 		if ( $user->getRealName() === '' ) {
 			// Set the user's real name if they are logging in for the first time. Also note MDLSITE-1293.
 			$this->logger->debug( 'AuthMoodle: Setting the user real name' );
+			if ( !defined( DB_SLAVE ) ) {
+                        	define( 'DB_SLAVE', DB_REPLICA );
+                        }
 			$mwdbr = wfGetDB( DB_SLAVE );
 			$realname = $userinfo->fullname;
 			$counter = 1;
