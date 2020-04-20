@@ -4,8 +4,8 @@ Extension for MediaWiki allowing to authenticate users against Moodle database v
 
 ## Requirements:
 
-* MediaWiki 1.27+
-* Moodle 3.1+ with mobile app service enabled
+* MediaWiki 1.34+
+* Moodle 3.8+ with mobile app service enabled
 
 ## Installation and setup
 
